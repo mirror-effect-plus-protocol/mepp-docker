@@ -27,7 +27,7 @@ services:
 
   django:
     build: ../mepp-web
-    image: mepp:2.1.x
+    image: mepp:2.x.x
     env_file:
       - ../mepp-web/.env
     volumes:
