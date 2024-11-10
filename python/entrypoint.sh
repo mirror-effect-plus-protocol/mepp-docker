@@ -10,4 +10,6 @@ python manage.py migrate --no-input
 
 python manage.py collectstatic --noinput
 
+chown -R $UWSGI_USER:$UWSGI_GROUP media
+
 $(command -v uwsgi) --ini /etc/uwsgi.ini
