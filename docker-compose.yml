@@ -17,7 +17,7 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./.vols/logs/nginx:/var/logs/nginx/
+      - ./.vols/log/nginx:/var/log/nginx/
       - ../mepp-web/build:/usr/share/nginx/html
       - ./.vols/media:/usr/share/nginx/upload/media
       - ../mepp-web/.well-known:/usr/share/nginx/html/.well-known
@@ -36,7 +36,7 @@ services:
       - ./python/uwsgi.ini:/etc/uwsgi.ini:ro
       - static-content:/usr/src/app/static
       - ./.vols/log/django:/var/log/
-      - ./.vols/media:/usr/share/nginx/upload/media
+      - ./.vols/media:/usr/src/app/media
     restart: unless-stopped
 
 volumes:
