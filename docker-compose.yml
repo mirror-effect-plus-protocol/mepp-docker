@@ -1,9 +1,7 @@
-version: '3'
-
 services:
 
   postgres:
-    image: postgres:14.6
+    image: postgres:14.15
     env_file:
       - ../mepp-web/.env
     volumes:
@@ -11,7 +9,7 @@ services:
     restart: unless-stopped
 
   nginx:
-    image: nginx:latest
+    image: nginx:stable
     env_file:
       - ../mepp-web/.env
     volumes:
